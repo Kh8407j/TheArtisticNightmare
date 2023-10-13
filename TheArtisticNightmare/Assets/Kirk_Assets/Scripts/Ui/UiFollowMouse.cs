@@ -9,7 +9,7 @@ namespace UI
     public class UiFollowMouse : MonoBehaviour
     {
         /*
-        Script made using help of the following video:
+        KH - Script made using help of the following video:
         https://youtu.be/JBn9cJvTJnA?feature=shared
          */
 
@@ -18,7 +18,7 @@ namespace UI
         [SerializeField] RectTransform basisObject;
         private Camera cam;
 
-        // Called before 'void Start()'.
+        // KH - Called before 'void Start()'.
         private void Awake()
         {
             cam = GetComponent<Camera>();
@@ -30,7 +30,7 @@ namespace UI
             MoveObject();
         }
 
-        // Make the moving object position itself at the cursor's position on the screen.
+        // KH - Make the moving object position itself at the cursor's position on the screen.
         public void MoveObject()
         {
             Vector3 pos = Input.mousePosition + offset;

@@ -9,10 +9,10 @@ namespace managers
     {
         public static GameManager instance;
 
-        // Called before 'void Start()'.
+        // KH - Called before 'void Start()'.
         private void Awake()
         {
-            // Allow GM to transfer between scenes while avoiding any duplicates.
+            // KH - Allow GM to transfer between scenes while avoiding any duplicates.
             if (instance == null)
             {
                 instance = this;
