@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using monster;
 
 namespace player
 {
@@ -52,13 +53,33 @@ namespace player
             if(Physics.Raycast(ray, out hit, 1000f))
             {
                 // KH - Check that delay time has reached zero before registering fire.
-                if(holdFireTimer == 0f)
+                if (holdFireTimer == 0f)
                 {
+                    // KH - Apply delay for next time player fires.
                     holdFireTimer = holdFireTime;
+
+                    // KH - Debug fire circles to show where player has fired.
                     GameObject obj = Instantiate(paintSplash, hit.point, Quaternion.identity);
                     Destroy(obj, 2f);
-                    //Debug.Log(hit.transform.name);
+
+                    // KH - Check that the player has successfully hit a target.
+                    if (hit.transform != null)
+                    {
+                        RegisterHit(hit.transform);
+                    }
                 }
+            }
+        }
+
+        // KH - Called by 'void Fire()' when a target is successfully hit.
+        void RegisterHit(Transform hit)
+        {
+            // KH - Check that the target was a paintable target.
+            if(hit.CompareTag("PaintTarget"))
+            {
+                // KH - Set the paintable target as painted.
+                PaintTarget target = hit.gameObject.GetComponent<PaintTarget>();
+                target.SetPainted(true);
             }
         }
     }

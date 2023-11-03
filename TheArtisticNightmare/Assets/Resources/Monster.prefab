@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4942726416929827524}
   m_Layer: 0
   m_Name: RightEye
-  m_TagString: Untagged
+  m_TagString: PaintTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,6 +118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41ad135348bbe2d42ae0c869b68f2f72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  changeMaterialOnPainted: 1
+  paintedMat: {fileID: 2100000, guid: 257239793f07544459852ed281ed8a78, type: 2}
 --- !u!1 &244174885598110117
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,6 +166,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 930e9a720d5c60648b4e011407c25f6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  increaseSanityReward: 5
+  decreasePlayerRate: 0.02
+  decreaseSanityTimeDelay: 0.1
 --- !u!1 &3232574733151531810
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,7 +184,7 @@ GameObject:
   - component: {fileID: 4317266679036821652}
   m_Layer: 0
   m_Name: Mouth
-  m_TagString: Untagged
+  m_TagString: PaintTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -282,6 +287,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41ad135348bbe2d42ae0c869b68f2f72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  changeMaterialOnPainted: 1
+  paintedMat: {fileID: 2100000, guid: 257239793f07544459852ed281ed8a78, type: 2}
 --- !u!1 &3916164861292975835
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,7 +443,7 @@ GameObject:
   - component: {fileID: 3929636747268279510}
   m_Layer: 0
   m_Name: LeftEye
-  m_TagString: Untagged
+  m_TagString: PaintTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -539,3 +546,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41ad135348bbe2d42ae0c869b68f2f72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  changeMaterialOnPainted: 1
+  paintedMat: {fileID: 2100000, guid: 257239793f07544459852ed281ed8a78, type: 2}
