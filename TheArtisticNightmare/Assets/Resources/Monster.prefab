@@ -166,9 +166,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 930e9a720d5c60648b4e011407c25f6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseSanityReward: 5
-  decreasePlayerRate: 0.02
-  decreaseSanityTimeDelay: 0.1
+  decreaseLoseRate: 0.5
+  decreaseLoseRateDelay: 0.2
+  increaseLoseRate: 3
 --- !u!1 &3232574733151531810
 GameObject:
   m_ObjectHideFlags: 0

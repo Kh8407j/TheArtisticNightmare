@@ -1,4 +1,5 @@
 // KHOGDEN 001115381
+using player;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,7 @@ namespace monster
     {
         private bool painted;
         private Renderer render;
+        private Monster monster;
 
         [Header("Debug Settings")]
         [SerializeField] bool changeMaterialOnPainted;
@@ -18,6 +20,7 @@ namespace monster
         private void Awake()
         {
             render = GetComponent<Renderer>();
+            monster = GetComponentInParent<Monster>();
         }
 
         // Start is called before the first frame update
@@ -32,14 +35,24 @@ namespace monster
 
         }
 
-        // KH - Method to set the value of 'painted'.
-        public void SetPainted(bool input)
+        // KH - Register the paint target as successfully painted on.
+        public void Paint()
         {
-            painted = input;
+            painted = true;
+
+            // KH - If all the monster's targets are painted, convert it to a positive memory.
+            if(monster.AllTargetsPainted())
+                monster.ConvertToPositive();
 
             // KH - Change material on painted if debug setting is enabled.
-            if(changeMaterialOnPainted)
+            if (changeMaterialOnPainted)
                 render.material = paintedMat;
+        }
+
+        // KH - Method to check if the target has been painted or not.
+        public bool IsPainted()
+        {
+            return painted;
         }
     }
 }

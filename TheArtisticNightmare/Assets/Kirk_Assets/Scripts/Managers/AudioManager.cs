@@ -9,10 +9,10 @@ namespace managers
 {
     public class AudioManager : MonoBehaviour
     {
-        public static AudioManager control; // KH - Allows access to the audio manager from other scripts.
+        public static AudioManager instance;
 
-        [SerializeField] GameObject soundObject; // KH - The sound gameobject that'll be instantiated whenever 'PlayAudio()' is called.
-        private GameObject lastInstantiatedAudioObject; // KH - Reference for the last audio object to be instantiated from 'PlayAudio()'.
+        [SerializeField] GameObject soundObject;
+        private GameObject lastInstantiatedAudioObject;
 
         [Serializable]
         public class Sound
@@ -44,7 +44,7 @@ namespace managers
         // KH - Called before 'void Start()'.
         private void Awake()
         {
-            control = this;
+            instance = this;
         }
 
         // KH - Pick out a sound from 'sounds' and play one of it's audio clips chosen at random.

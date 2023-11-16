@@ -8,12 +8,12 @@ namespace audio
     public class Audio : MonoBehaviour
     {
         private Transform followTransform; // KH - If not null, the sound will constantly follow this transform.
-        private AudioSource audio; // KH - Reference to the audio source component.
+        private AudioSource source;
 
         // KH - Called before 'void Start()'.
         private void Awake()
         {
-            audio = GetComponent<AudioSource>();
+            source = GetComponent<AudioSource>();
         }
 
         // KH - Called on a constant timeline.
@@ -23,8 +23,8 @@ namespace audio
             if (followTransform != null)
                 transform.position = followTransform.position;
 
-            // KH - Once the audio for this game object stops playing, it'll be destroyed. Don't play sounds with no pitch.
-            if (!audio.isPlaying || audio.pitch == 0f)
+            // KH - Once the audio for this game object stops playing, it'll be destroyed.
+            if (!source.isPlaying || source.pitch == 0f)
                 Destroy(gameObject);
         }
 

@@ -7,19 +7,17 @@ namespace player
 {
     public class LoseMeter : MonoBehaviour
     {
+        public static LoseMeter instance;
+
+        // The lose rate. When this reaches zero, the player receives game over.
         [SerializeField] float loseRate = 100f;
         private float maxLoseRate;
-
-        [Header("Lose Rate Decay Settings")]
-        [SerializeField][Range(0.01f, 100f)] float decayRate = 1f;
-        [SerializeField][Range(0.01f, 1f)] float decayTime = 0.1f;
-        private float decayTimer;
 
         // KH - Called before 'void Start()'.
         private void Awake()
         {
+            instance = this;
             maxLoseRate = loseRate;
-            decayTimer = decayTime;
         }
 
         // Start is called before the first frame update
@@ -31,19 +29,11 @@ namespace player
         // Update is called once per frame
         void Update()
         {
-            // KH - Decrease the lose-rate decay timer until it reaches zero.
-            if(decayTimer > 0f)
-                decayTimer -= Time.deltaTime;
-            else if(decayTimer <= 0f)
-            {
-                // KH - Reduce lose-rate by the decay rate when timer reaches zero.
-                decayTimer = decayTime;
-                AddSanity(-decayRate);
-            }
+
         }
 
         // KH - Increase or decrease the player's lose-rate.
-        public void AddSanity(float add)
+        public void AddLoseRate(float add)
         {
             // KH - Add/subtract the inputted amount to the player's lose-rate.
             loseRate += add;

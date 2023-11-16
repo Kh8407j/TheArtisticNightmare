@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using monster;
+using managers;
+using audio;
 
 namespace player
 {
@@ -58,15 +60,21 @@ namespace player
                     // KH - Apply delay for next time player fires.
                     holdFireTimer = holdFireTime;
 
+                    // KH - Play the firing sound.
+                    NextSoundAttributes sa = new NextSoundAttributes();
+                    sa.Position = transform.position;
+                    sa.Pitch = 4f;
+                    AudioManager.instance.PlayAudio("Paintball Fire", sa);
+
                     // KH - Debug fire circles to show where player has fired.
                     GameObject obj = Instantiate(paintSplash, hit.point, Quaternion.identity);
+                    obj.transform.LookAt(transform.position);
+                    obj.transform.Rotate(0f, 180f, 0f);
                     Destroy(obj, 2f);
 
                     // KH - Check that the player has successfully hit a target.
                     if (hit.transform != null)
-                    {
                         RegisterHit(hit.transform);
-                    }
                 }
             }
         }
@@ -77,9 +85,10 @@ namespace player
             // KH - Check that the target was a paintable target.
             if(hit.CompareTag("PaintTarget"))
             {
-                // KH - Set the paintable target as painted.
+                // KH - Set the paintable target as painted if it isn't already.
                 PaintTarget target = hit.gameObject.GetComponent<PaintTarget>();
-                target.SetPainted(true);
+                if(!target.IsPainted())
+                    target.Paint();
             }
         }
     }
