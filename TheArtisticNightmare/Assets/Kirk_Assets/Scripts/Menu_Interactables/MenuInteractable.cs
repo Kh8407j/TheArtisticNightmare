@@ -8,6 +8,17 @@ namespace menuInteractable
     public class MenuInteractable : MonoBehaviour
     {
         [SerializeField] string messageOnMouseHighlight = "Click here!";
+        [SerializeField] InteractableMessageCanvas messageCanvasBlueprint;
+        [SerializeField] Vector3 mssageCanvasOffset;
+        private InteractableMessageCanvas messageCanvas;
+
+        // KH - Called before 'void Start()'.
+        void Awake()
+        {
+            GameObject h = Instantiate(messageCanvasBlueprint, transform.position + highlightMessageOffset, Quaternion.identity);
+            messageCanvas = h;
+            messageCanvas.SetInteractable(this);
+        }
 
         // Start is called before the first frame update
         void Start()
@@ -25,6 +36,12 @@ namespace menuInteractable
         public virtual void OnClick()
         {
 
+        }
+
+        // KH - Method to get the value of 'messageCanvas'.
+        public HighlightMessage GetMessageCanvas()
+        {
+            return messageCanvas;
         }
     }
 }

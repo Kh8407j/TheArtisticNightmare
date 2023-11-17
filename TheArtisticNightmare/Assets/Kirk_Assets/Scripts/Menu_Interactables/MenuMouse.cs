@@ -8,6 +8,7 @@ namespace menuInteractable
     public class MenuMouse : MonoBehaviour
     {
         private MenuInteractable highlight;
+        private menuInteractable lastHighlighted;
         private Camera cam;
 
         // KH - Called before 'void Start()'.
@@ -26,6 +27,13 @@ namespace menuInteractable
         void Update()
         {
             highlight = CheckMouseHighlight();
+            highlight.GetMessageCanvas().Showing = true;
+
+            // KH - Check that the user's mouse has stopped highlighting this menu item.
+            if (lastHighlighted != highlight)
+                lastHighlighted.GetMessageCanvas().Showing = false;
+
+            lastHighlighted = highlight;
         }
 
         // KH - Method to check if the mouse is highlighting a interactable, returning it.
