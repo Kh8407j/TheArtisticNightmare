@@ -3,12 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace menuInteractable
+namespace UI
 {
-    public class MenuInteractable : MonoBehaviour
+    public class MenuMouse : MonoBehaviour
     {
-        [SerializeField] string messageOnMouseHover;
-
         // Start is called before the first frame update
         void Start()
         {
@@ -17,12 +15,6 @@ namespace menuInteractable
 
         // Update is called once per frame
         void Update()
-        {
-
-        }
-
-        // KH - Called when this interactable is clicked on.
-        public virtual void OnClick()
         {
 
         }
