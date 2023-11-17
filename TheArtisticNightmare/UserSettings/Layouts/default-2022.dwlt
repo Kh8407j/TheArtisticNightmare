@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 558
     height: 1307.3334
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -94,8 +94,8 @@ MonoBehaviour:
     y: 0
     width: 365.33334
     height: 964.6667
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -269,8 +269,8 @@ MonoBehaviour:
     y: 0
     width: 1636.6666
     height: 964.6667
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -435,7 +435,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Resources
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -443,16 +443,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Resources
   m_LastFoldersGridSize: 96
   m_LastProjectPath: C:\Users\kh8407j\Downloads\TheArtisticNightmare\TheArtisticNightmare
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 114.33331}
-    m_SelectedIDs: 10410000
-    m_LastClickedID: 16656
-    m_ExpandedIDs: 00000000c0400000504100007c410000dc41000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 66.33331}
+    m_SelectedIDs: 7c410000
+    m_LastClickedID: 16764
+    m_ExpandedIDs: 00000000c040000050410000dc41000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -624,7 +624,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 9852feffda5cfeff765efeff625ffeff9061feffac64feffd66afeff8a93feff2c95feff9696feff9e9afeff14a1feffaaa3feffe8c000002ac1000054c1000082c1000000c50000acc90000c6c90000
+      m_ExpandedIDs: 4e8afeff0ea1feff7aa3feff4ac1000086c10000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1031,9 +1031,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 10.037728, y: -7.130076, z: 11.944422}
+    m_Target: {x: 3.7074833, y: -20.907106, z: 39.95682}
     speed: 2
-    m_Value: {x: 10.037728, y: -7.130076, z: 11.944422}
+    m_Value: {x: 3.7074833, y: -20.907106, z: 39.95682}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1071,7 +1071,7 @@ MonoBehaviour:
       m_Fade:
         m_Target: 0
         speed: 2
-        m_Value: 0
+        m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
@@ -1079,13 +1079,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.23545402, y: -0.47081944, z: 0.13198408, w: -0.8399356}
+    m_Target: {x: -0.253179, y: -0.16388835, z: 0.043565866, w: -0.95245254}
     speed: 2
-    m_Value: {x: -0.23545152, y: -0.47081444, z: 0.13198268, w: -0.83992666}
+    m_Value: {x: -0.25168192, y: -0.1653807, z: 0.04369705, w: -0.95257336}
   m_Size:
-    m_Target: 16.468147
+    m_Target: 50.14435
     speed: 2
-    m_Value: 16.468147
+    m_Value: 50.14435
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1103,7 +1103,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.23104754, y: -0.44155455, z: 0.11879321, w: -0.8588094}
+  m_LastSceneViewRotation: {x: -0.39625275, y: -0.058608606, z: 0.02535687, w: -0.9159301}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -1175,10 +1175,10 @@ MonoBehaviour:
     m_VAllowExceedBaseRangeMin: 1
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
-    m_HSlider: 0
+    m_HSlider: 1
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -1231,9 +1231,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 766
-    width: 1500
-    height: 225
+    y: 1037.3334
+    width: 2001
+    height: 321.6667
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0

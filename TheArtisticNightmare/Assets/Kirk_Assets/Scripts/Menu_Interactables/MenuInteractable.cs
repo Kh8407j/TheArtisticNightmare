@@ -7,7 +7,7 @@ namespace menuInteractable
 {
     public class MenuInteractable : MonoBehaviour
     {
-        [SerializeField] string messageOnMouseHover;
+        [SerializeField] string messageOnMouseHighlight = "Click here!";
 
         // Start is called before the first frame update
         void Start()
