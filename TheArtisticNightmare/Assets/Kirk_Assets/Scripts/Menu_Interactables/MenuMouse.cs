@@ -27,11 +27,14 @@ namespace menuInteractable
         void Update()
         {
             highlight = CheckMouseHighlight();
-            highlight.GetMessageCanvas().Showing = true;
+
+            // KH - Do when the mouse is hovering over a interactable.
+            if (highlight != null)
+                highlight.Highlighted = true;
 
             // KH - Check that the user's mouse has stopped highlighting this menu item.
-            if (lastHighlighted != highlight)
-                lastHighlighted.GetMessageCanvas().Showing = false;
+            if (lastHighlighted != highlight && lastHighlighted != null)
+                lastHighlighted.Highlighted = false;
 
             lastHighlighted = highlight;
         }

@@ -8,19 +8,22 @@ namespace menuInteractable
 {
     public class InteractableMessageCanvas : MonoBehaviour
     {
-        private bool showing;
         private Text text;
+        private Light light;
         private Animator anim;
         private MenuInteractable interactable;
-
         private Camera cam;
+        private Canvas canvas;
 
         // KH - Called before 'void Start()'.
         private void Awake()
         {
             text = GetComponentInChildren<Text>();
+            light = GetComponentInChildren<Light>();
             anim = GetComponent<Animator>();
             cam = Camera.main;
+            canvas = GetComponent<Canvas>();
+            canvas.worldCamera = cam;
         }
 
         // Start is called before the first frame update
@@ -32,15 +35,9 @@ namespace menuInteractable
         // Update is called once per frame
         void Update()
         {
-            anim.SetBool("Showing", showing);
+            anim.SetBool("Showing", interactable.Highlighted);
             transform.LookAt(cam.transform);
-        }
-
-        // KH - Method to get or set the value of 'showing'.
-        public bool Showing
-        {
-            get { return showing; }
-            set { showing = value; }
+            transform.Rotate(0f, 180f, 0f);
         }
 
         // KH - Method to set the highlight message text.
@@ -53,6 +50,12 @@ namespace menuInteractable
         public void SetInteractable(MenuInteractable input)
         {
             interactable = input;
+        }
+
+        // KH - Method to set the colour of the light.
+        public void SetGlowColour(Color color)
+        {
+            light.color = color;
         }
     }
 }
