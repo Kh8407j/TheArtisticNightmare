@@ -13,11 +13,16 @@ namespace menuInteractable
         private Animator anim;
         private MenuInteractable interactable;
 
+        private Canvas canvas;
+        private Camera cam;
+
         // KH - Called before 'void Start()'.
         private void Awake()
         {
             text = GetComponentInChildren<Text>();
             anim = GetComponent<Animator>();
+            canvas = GetComponentInParent<Canvas>();
+            cam = canvas.worldCamera;
         }
 
         // Start is called before the first frame update
@@ -29,7 +34,8 @@ namespace menuInteractable
         // Update is called once per frame
         void Update()
         {
-            anim.SetBool("ShowMessage", showMessage);
+            anim.SetBool("Showing", showing);
+            transform.LookAt(cam.transform);
         }
 
         // KH - Method to get or set the value of 'showing'.

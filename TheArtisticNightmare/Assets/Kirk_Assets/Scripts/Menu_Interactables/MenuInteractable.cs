@@ -9,14 +9,14 @@ namespace menuInteractable
     {
         [SerializeField] string messageOnMouseHighlight = "Click here!";
         [SerializeField] InteractableMessageCanvas messageCanvasBlueprint;
-        [SerializeField] Vector3 mssageCanvasOffset;
+        [SerializeField] Vector3 messageCanvasOffset;
         private InteractableMessageCanvas messageCanvas;
 
         // KH - Called before 'void Start()'.
         void Awake()
         {
-            GameObject h = Instantiate(messageCanvasBlueprint, transform.position + highlightMessageOffset, Quaternion.identity);
-            messageCanvas = h;
+            GameObject h = Instantiate(messageCanvasBlueprint.gameObject, transform.position + messageCanvasOffset, Quaternion.identity);
+            messageCanvas = h.GetComponent<InteractableMessageCanvas>();
             messageCanvas.SetInteractable(this);
         }
 
@@ -39,7 +39,7 @@ namespace menuInteractable
         }
 
         // KH - Method to get the value of 'messageCanvas'.
-        public HighlightMessage GetMessageCanvas()
+        public InteractableMessageCanvas GetMessageCanvas()
         {
             return messageCanvas;
         }

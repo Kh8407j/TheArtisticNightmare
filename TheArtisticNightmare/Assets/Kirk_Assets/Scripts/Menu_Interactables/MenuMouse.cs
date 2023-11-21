@@ -8,7 +8,7 @@ namespace menuInteractable
     public class MenuMouse : MonoBehaviour
     {
         private MenuInteractable highlight;
-        private menuInteractable lastHighlighted;
+        private MenuInteractable lastHighlighted;
         private Camera cam;
 
         // KH - Called before 'void Start()'.
