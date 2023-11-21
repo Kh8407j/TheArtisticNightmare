@@ -13,7 +13,6 @@ namespace menuInteractable
         private Animator anim;
         private MenuInteractable interactable;
 
-        private Canvas canvas;
         private Camera cam;
 
         // KH - Called before 'void Start()'.
@@ -21,8 +20,7 @@ namespace menuInteractable
         {
             text = GetComponentInChildren<Text>();
             anim = GetComponent<Animator>();
-            canvas = GetComponentInParent<Canvas>();
-            cam = canvas.worldCamera;
+            cam = Camera.main;
         }
 
         // Start is called before the first frame update
